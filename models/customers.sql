@@ -12,7 +12,8 @@ with customers as (
     --     last_name
 
     -- from raw.jaffle_shop.customers
-    SELECT * FROM {{ref('stg_customers')}}
+    -- SELECT * FROM {{ref('stg_customers')}}
+    SELECT * FROM {{source('jaffle_shop', 'customers')}}
 ),
 
 orders as (
